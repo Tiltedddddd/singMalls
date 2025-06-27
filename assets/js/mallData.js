@@ -367,7 +367,7 @@ export const malls = [
     region: "Central",
     mrt: "Orchard",
     image: "assets/images/ionOrchard.webp",
-    description: "Upscale mall in the heart of Orchard Road.",
+    description: "ION Orchard is a premium shopping mall located on Orchard Road in Singapore, known for its striking architecture and a wide array of luxury and high-street brands.",
     shops: [
       { name: "& Other Stories", floor: "03-24A/24/25/26", category: ["Fashion"], logo: "assets/images/logos/&otherStories.png" },
       { name: "A. Lange & Sohne", floor: "02-05A", category: ["Lifestyle"], logo: "assets/images/logos/A.LANGE.png" },
