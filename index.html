@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/logo.png">
+    <title>SingSplore</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=filter_list" />
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Hero section -->
+    <header class="hero">
+        <div class="header_overlay"></div>
+        <video autoplay muted loop playsinline class="hero_video_bg">
+            <source src="assets/images/indexHeroBroll.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero_content">
+            <div class="text_container">
+                <h1>Explore Singapore's iconic malls</h1>
+                <p>A refined directory for modern shoppers</p>
+            </div>
+        </div>
+
+        <div class="search_wrapper">
+            <div class="search_container">
+                <input type="text" placeholder="Search..." class="search_input">
+            </div>
+        </div>
+    </header>
+
+    <!-- Placeholder for mall cards -->
+    <main class="mall-section">
+        <!-- Central region -->
+        <section class="region-section" data-region = "Central">
+            <h2 class="region-title">Central</h2>
+            <div class="container swiper">
+                <div class="slider-wrapper">
+                    <div class="card-list swiper-wrapper" data-region-list = "Central"> </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- North Section -->
+
+        <section class="region-section" data-region = "North">
+            <h2 class="region-title">North</h2>
+            <div class="container swiper">
+                <div class="slider-wrapper">
+                    <div class="card-list swiper-wrapper" data-region-list = "North"> </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- South -->
+        <section class="region-section" data-region = "South">
+            <h2 class="region-title">South</h2>
+            <div class="container swiper">
+                <div class="slider-wrapper">
+                    <div class="card-list swiper-wrapper" data-region-list = "South"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- East -->
+        <section class="region-section" data-region = "East">
+            <h2 class="region-title">East</h2>
+            <div class="container swiper">
+                <div class="slider-wrapper">
+                    <div class="card-list swiper-wrapper" data-region-list = "East"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- West -->
+        <section class="region-section" data-region = "West">
+            <h2 class="region-title">West</h2>
+            <div class="container swiper">
+                <div class="slider-wrapper">
+                    <div class="card-list swiper-wrapper" data-region-list = "West"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- disclaimer modal -->
+    <div class="disclaimer_modal" id="disclaimerModal">
+        <div class="disclaimer_content">
+            <h2>🚧 SingMalls is Under Construction🚧</h2>
+            <p>
+                Data's still being collated for all 170+ malls in Singapore.<br><br>
+                Completed malls:<br>
+                • Bugis Junction<br>
+                • Ion Orchard<br>
+        
+                <br>Thank you for visiting! And if you'd like to provide data for malls please email darren7172@gmail.com! 😊<br>
+            </p>
+            <button id="disclaimerCloseBtn">Got it!</button>
+        </div>
+    </div>
+
+    <script type ="module" src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/mallData.js"></script>
+
+</body>
+
+</html>

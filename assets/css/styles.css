@@ -1,0 +1,867 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    background: linear-gradient(-45deg, #f5f5f5, #e9e9e9, #f5f5f5, #e0e0e0);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    font-family: "Inter";
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+p{
+    font-family: 'Inter', sans-serif; 
+}
+
+/* Hero banner section */
+.hero {
+    position: relative;
+    /* background: url('../images/buildingHero.jpg') center/cover no-repeat; */
+    height: 85vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.hero_video_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+
+.hero::after {
+  /* Subtle glow for end of hero section to show that the main part is starting :) */
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+  z-index: 2;
+}
+
+.mall-section {
+  position: relative;
+  z-index: 2;
+}
+
+.mall-section::before {
+  content: '';
+  display: block;
+  height: 40px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+.header_overlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(23, 23, 23, 0.568);
+    z-index: 1;
+}
+
+.hero_content{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    gap: 2rem;
+    align-items: flex-start; /* align to left */
+    max-width: 600px;
+    width: 100%;
+    padding-left: 3rem;
+    margin-top: -4rem;
+    padding-bottom: 2rem;
+    height: 100%;
+    }
+
+
+.text_container p{
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: left;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.text_container h1{
+    font-family: 'Playfair Display',Georgia, serif;
+    font-weight: normal;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#mall_name{
+  font-family: 'Inter';
+  font-weight: bold;
+  color: white;
+}
+
+
+
+/* Search bar for index.html */
+.search_wrapper {
+  position: absolute;
+  left: 52%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  padding: 0 1rem; 
+  z-index: 2;
+}
+
+
+.search_container{
+  position: relative;
+  max-width: 500px;     
+  width: 100%;
+}
+
+.search_input{
+  width: 100%;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
+  border-radius: 20px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Disclaimer Modal popup for users */
+.disclaimer_modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.disclaimer_content {
+  background-color: #fff;
+  color: #222;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  animation: popIn 0.4s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.disclaimer_content h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.disclaimer_content p {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.disclaimer_content button {
+  padding: 0.5rem 2rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.disclaimer_content button:hover {
+  background-color: #555;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+
+/* ======Styles for mallDetail.html======= */
+
+.blob_background {
+  position: absolute;
+  top: 75vh;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+  filter: blur(40px);
+  animation: float 25s ease-in-out infinite;
+}
+
+.blob1 {
+  width: 400px;
+  height: 400px;
+  background: #fff3f3;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.blob2 {
+  width: 300px;
+  height: 300px;
+  background: #ffffff;
+  top: 50%;
+  left: 60%;
+  animation-delay: 5s;
+}
+
+.blob3 {
+  width: 350px;
+  height: 350px;
+  background: #ffffff;
+  top: 70%;
+  left: 30%;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+}
+
+
+
+
+
+.home_btn {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.654); /* Subtle background */
+  backdrop-filter: blur(6px);
+  border-radius: 5px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}
+
+
+
+.home_btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+.mall_overlay {
+  position: absolute;
+  inset: 0;
+  filter: blur(2px);
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.295), rgba(0,0,0,0.6));
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.mall_hero {
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+}
+
+.mall_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mall_hero_image {
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.555);
+  margin-bottom: 2rem;
+}
+
+.mall_hero .hero_content {
+  align-items: center;
+  padding: 0;
+}
+
+
+
+/* Toggle bar styling */
+
+.hero_toggle_position {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 72%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.tab_section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+
+.toggle_group {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  gap: 0.5rem;
+  padding: 0.4rem;
+  border-radius: 999px;
+  background-color: rgb(193, 192, 192);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.425);
+}
+
+.toggle_tab {
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  color: rgb(15, 20, 46);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.toggle_tab.active {
+  background-color: rgb(35, 35, 35);
+  color: rgb(253, 253, 253);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Rectangle holding tab info below hero portion */
+.tab_main_container {
+  background: rgba(248, 252, 255, 0.524); 
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.377);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.168);
+  z-index: 2;
+}
+
+.pill_indicator {
+  position: absolute;
+  top: 0.4rem;
+  left: 0;
+  height: calc(100% - 0.8rem);
+  border-radius: 999px;
+  background-color: rgb(35, 35, 35);
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+
+/* ============================================================== */
+/*   Shop Section in MallDetail Container & Layout & Searchbar    */
+/* ============================================================== */
+
+.shop_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+
+.shop_inner {
+  display: flex;
+   justify-content: center;
+   align-items: center;
+  max-width: 700px;
+  width: 100%;
+  margin: 1.25rem auto;
+  gap: 2rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.shop_inner:hover {
+  transform: translateY(-5px);
+}
+
+/* Left side, logo area */
+.shop_logo {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #fff; 
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.shop_logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Right side, mall desc */
+.shop_info {
+  flex: 1;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.637);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #f8f8f8;
+  max-width: 300px;
+}
+
+.shop_info h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: rgb(0, 0, 0);
+}
+
+.shop_info p {
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 2;
+}
+
+/*Searchbar for directory tab thingy*/
+.directory_search_wrapper{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.directory_search_container {
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+}
+
+
+.directory_search_input{
+  width: 100%;
+  padding: 1rem 3rem 1rem 1.25rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  text-align: left;
+}
+
+.directory_filter_btn{
+  position: absolute;
+  right: 0.75rem;
+  top: 0;
+  bottom: 0;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  justify-content: center;
+}
+
+.filter_badge {
+  position: absolute;
+  top: 5px;
+  right: -6px;
+  background-color: rgb(57, 83, 154);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter_badge.hidden {
+  display: none;
+}
+
+/* Filter modal chip selection */
+/* Modal container styling */
+.filter_chip_modal_overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.filter_chip_modal_overlay.hidden{
+  display: none;
+}
+
+.filter_chip_modal_content{
+  background-color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  animation: fadeScaleIn 0.2s ease forwards;
+}
+
+@keyframes fadeScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeScaleOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.filter_chip_modal_content h2 {
+  margin-bottom: 1.2rem;
+  font-family: 'Inter';
+  color: #222;
+}
+
+/* Container for chips */
+.filter_chip_container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* Individual chip style */
+.filter_chip{
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background-color: white;
+  font-weight: 0.9rem;
+  cursor: pointer;
+  transition: 0.2 ease;
+}
+
+.filter_chip:hover{
+  transition: 0.3s;
+  color: white;
+  background-color: #555;
+}
+
+.filter_chip.active{
+  background-color: #333;
+  color: white;
+}
+
+.filter_modal_btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.apply_filters_btn{
+  background-color: #333;
+  color: white;
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3 ease;
+}
+
+.apply_filters_btn:hover {
+  background-color: #555;
+}
+
+.clear_filters_btn {
+  background: transparent;
+  color: #666;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.clear_filters_btn:hover {
+  transition: 0.3s ease;
+  color: #000;
+}
+
+/*Promotions tab styling*/
+.promo_grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.promo_card {
+  background-color: #ffffff51;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.promo_card:hover {
+  transform: translateY(-5px);
+}
+
+
+
+.promo_card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.promo_card h3 {
+  margin-top: 0.8rem;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* About section styling */
+.about_txt{
+  font-family: 'Inter';
+  padding-bottom: 1rem;
+  color: #333;
+}
+
+/*Google map img ting*/
+
+.view_map_img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.direction_txt{
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.view_map_img:hover {
+  transform: scale(1.02);
+  filter: brightness(85%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Minimal responsiveness */
+
+@media (max-width: 768px) {
+  .search_wrapper {
+    padding: 50px 1rem 0 1rem;
+    left: 50%; 
+    max-width: 90%;
+  }  
+
+   .hero_toggle_position {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    max-width: 90%;
+    padding: 0 1rem;
+    z-index: 2;
+  }
+
+  .toggle_group {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .toggle_tab {
+    flex: 1 1 auto;
+    padding: 0.5rem 0.3rem;
+    font-size: 0.9rem;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 999px;
+    min-width: 0;
+  }
+
+  .shop_inner {
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  .shop_logo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .shop_info {
+    padding: 1rem;
+    max-width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .shop_info h3 {
+    font-size: 1rem;
+  }
+
+  .shop_info p {
+    font-size: 0.9rem;
+  }
+
+  .directory_search_container{
+    max-width: 250px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .hero_content h1 {
+    font-size: 3rem;
+  }
+
+  .hero_content p {
+    font-size: 1.2rem;
+  }
+
+}
+

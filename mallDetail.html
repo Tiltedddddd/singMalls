@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/images/logo.png">
+  <title>SingSplore</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=filter_list" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Header / Hero area -->
+  <header class="hero mall_hero">
+    <div class="mall_overlay"></div>
+    <a href="index.html" class="home_btn">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+        <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+      </svg>
+    </a>
+    <div class="hero_content">
+      <div class="text_container">
+        <h1 id="mall_name"></h1>
+        <p>Explore stores, promotions and more.</p>
+      </div>
+    </div>
+
+    <!-- Toggle bar for directory, promotions, about -->
+    <div class="hero_toggle_position">
+      <div class="toggle_group" id="mall_tabs">
+        <span class="pill_indicator"></span>
+        <button class="toggle_tab active" data-tab="directory">Directory</button>
+        <button class="toggle_tab" data-tab="promotions">Promotions</button>
+        <button class="toggle_tab" data-tab="about">About</button>
+      </div>
+    </div>
+  </header>
+
+
+
+  <div class="blob_background">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+
+
+
+
+
+  <main class="tab_main_container">
+    <!-- Tab Content Sections -->
+    <div id="directory_tab" class="tab_section">
+      <!-- Search bar -->
+      <div class="directory_search_wrapper">
+        <div class="directory_search_container">
+          <input type="text" class="directory_search_input" placeholder="Search for shops...">
+          <button class="directory_filter_btn">
+            <span class="material-symbols-outlined filter_icon">filter_list</span>
+            <span class="filter_badge hidden">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="shops_container" class="shop_list"></div>
+    </div>
+
+    <div id="promotions_tab" class="tab_section" style="display: none;">
+      <div class="promo_grid"></div>
+    </div>
+    <div id="about_tab" class="tab_section" style="display: none;">
+      <h2 class="about_txt">About this Mall</h2>
+      <p id="about_desc"></p><br>
+      <p>Nearest MRT: <span id="about_mrt"></span></p><br>
+
+      <div class="about_map_preview">
+        <h2 class="direction_txt">Directions:</h2>
+        <a href="#" id="google_maps_link" target="_blank" rel="noopener noreferrer">
+          <img src="assets/images/viewMap.png" alt="viewMap" class="view_map_img">
+        </a>
+      </div>
+    </div>
+  </main>
+
+
+
+  <div class="filter_chip_modal_overlay hidden">
+    <div class="filter_chip_modal_content">
+      <h2>Select Filters</h2>
+      <div class="filter_chip_container">
+        <!-- Food & Dining -->
+        <button class="filter_chip" data-category="F&B">F&B</button>
+        <button class="filter_chip" data-category="Halal">Halal</button>
+        <button class="filter_chip" data-category="Snacks">Snacks</button>
+
+        <!-- Retail -->
+        <button class="filter_chip" data-category="Fashion">Fashion</button>
+        <button class="filter_chip" data-category="Footwear">Footwear</button>
+        <button class="filter_chip" data-category="Lifestyle">Lifestyle</button>
+        <button class="filter_chip" data-category="Stationery">Stationery</button>
+        <button class="filter_chip" data-category="Books">Books</button>
+
+        <!-- Essentials -->
+        <button class="filter_chip" data-category="Groceries">Groceries</button>
+        <button class="filter_chip" data-category="Pharmacy">Pharmacy</button>
+        <button class="filter_chip" data-category="Eyewear">Eyewear</button>
+        <button class="filter_chip" data-category="Electronics">Electronics</button>
+        <button class="filter_chip" data-category="Telecom">Telecom</button>
+        <button class="filter_chip" data-category="Health">Health</button>
+
+        <!-- Entertainment & Leisure -->
+        <button class="filter_chip" data-category="Entertainment">Entertainment</button>
+        <button class="filter_chip" data-category="Toys">Toys</button>
+        <button class="filter_chip" data-category="Hobbies & Collectibles">Hobbies & Collectibles</button>
+        <button class="filter_chip" data-category="Sports">Sports</button>
+
+        <!-- Misc -->
+        <button class="filter_chip" data-category="Gifts & Flowers">Gifts & Flowers</button>
+      </div>
+
+      <div class="filter_modal_btns">
+        <button class="apply_filters_btn">Apply Filters (0)</button>
+        <button class="clear_filters_btn">Clear All</button>
+      </div>
+
+
+    </div>
+  </div>
+
+  <script type="module" src="assets/js/mallDetail.js"></script>
+</body>
+
+</html>

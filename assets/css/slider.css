@@ -1,0 +1,128 @@
+
+
+/* Slider container */
+.slider-wrapper {
+  overflow: visible;
+  width: 100%;
+  margin: 0 70px 55px;
+  padding-top: 40px;
+}
+
+/* Card structure */
+.swiper-slide {
+  height: auto; 
+  max-width: 250px;
+}
+
+.region-title{
+  color: rgb(65, 61, 61);
+  padding-top: 30px;
+  padding-left: 70px;
+  margin-bottom: -10px;
+  font-family: 'Inter';
+  font-weight: bold;
+}
+
+.card-link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(31, 21, 21, 0.35);  /* dark glassy tint */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.411),       /* soft depth shadow */
+    0 0 10px rgba(49, 43, 43, 0.127);  
+  transition: 0.3s ease;
+}
+
+.card-item:hover {
+  transform: translateY(-3px) scale(1.01);
+  transition: 0.3s ease;
+  box-shadow: 0 12px 25px rgba(133, 122, 101, 0.527);
+}
+
+
+.card-bg {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  height: 220px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Text at bottom */
+}
+
+.card-content {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  border-radius: 0 0 1rem 1rem;
+  background-color: rgba(250, 249, 249, 0.884)
+}
+
+.mall-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Swiper Pagination & Arrows */
+
+.slider-wrapper .swiper-pagination-bullet {
+  visibility: hidden;
+}
+
+.slider-wrapper .swiper-pagination-bullet-active {
+  visibility: hidden;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ffffff;
+  transition: 0.2s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #585858;
+}
+
+/* Responsiveness for mobile screens */
+
+@media (max-width: 768px) {
+  .slider-wrapper {
+    margin: 0 10px 40px;
+    width: 100%;
+  }
+  .slider-wrapper .swiper-slide-button {
+    display: none;
+  }
+
+  .region-title{
+    padding-left: 20px;
+  }
+
+  .swiper-slide{
+    width: 200px !important;
+  }
+
+  .card-bg {
+    height: 170px; 
+  }
+}
