@@ -65,6 +65,3 @@ The only current bottleneck is the time it takes to gather and format that data.
 ### Focused mall
 ![Focused mall page](assets/images/mallDetailreadme.png)
 
-### Focused mall (mobile)
-![Focused mall mobile](assets/images/mallDetailmobile.png)
-![Focused shop directory mobile](assets/images/shopDirectorymobile.png)
