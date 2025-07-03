@@ -29,7 +29,7 @@ The only current bottleneck is the time it takes to gather and format that data.
 
 ## 🔗 Live Demo
 
-🏢[Visit SingSplore on Netlify](https://celebrated-moonbeam-f88313.netlify.app)
+🏢[Visit SingSplore on Netlify](https://singsplore.netlify.app/)
 
 ---
 
