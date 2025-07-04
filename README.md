@@ -2,7 +2,7 @@
 
 **SingSplore** is a responsive mall directory web app for exploring Singapore’s shopping malls. The website provides information like a store directory, current ongoing promotions and an about tab.
 
-> This is my **first solo web project** done outside of school 😊, born out of a simple frustration:  
+> This is my **first solo web project** done outside of school 😊 I started this due to the fact that many directory websites had lackluster UI/UX and outdated information:  
 > Most mall websites in Singapore either look outdated, are inconsistent, or lack basic features like filtering or search which gave me a poor user experience as a local.  
 >
 > So I built **SingSplore** to fix that clean modern UI, real-time search filtering, and smooth mobile browsing, all coded from scratch using HTML, CSS, and JavaScript.
